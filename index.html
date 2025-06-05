@@ -1,0 +1,135 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Noite de Pentecostes</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@400;700&display=swap');
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Montserrat', sans-serif;
+      color: white;
+      background: linear-gradient(to top, #2c0d00, #000000);
+      background-attachment: fixed;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+      overflow-x: hidden;
+    }
+    .container {
+      max-width: 800px;
+      background-color: rgba(0, 0, 0, 0.7);
+      padding: 2rem;
+      border-radius: 16px;
+      box-shadow: 0 0 20px rgba(255, 165, 0, 0.3);
+      backdrop-filter: blur(4px);
+      text-align: center;
+      animation: fadeIn 2s ease-in-out;
+    }
+    h1 {
+      font-size: 2.5rem;
+      color: #ffae42;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin-bottom: 1rem;
+    }
+    .subtitle {
+      font-family: 'Great Vibes', cursive;
+      font-size: 2rem;
+      color: #ffffff;
+      margin-bottom: 1rem;
+      animation: glow 2s infinite alternate;
+    }
+    p.verse {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: #ffffff;
+      margin: 1.5rem 0;
+      animation: fadeIn 3s ease-in-out;
+    }
+    .info {
+      font-size: 1.1rem;
+      margin-top: 1.2rem;
+      line-height: 1.8;
+      color: #ddd;
+    }
+    .highlight {
+      color: #ffaa00;
+      font-weight: bold;
+    }
+    footer {
+      margin-top: 2rem;
+      font-size: 0.9rem;
+      color: #aaa;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes glow {
+      0% { text-shadow: 0 0 10px #ff8800; }
+      100% { text-shadow: 0 0 20px #ffaa00, 0 0 30px #ffaa00; }
+    }
+    .btn {
+      background: #ff7e00;
+      color: white;
+      border: none;
+      padding: 0.8rem 1.5rem;
+      margin-top: 2rem;
+      border-radius: 30px;
+      cursor: pointer;
+      font-size: 1rem;
+      transition: background 0.3s ease;
+    }
+    .btn:hover {
+      background: #ffaa00;
+    }
+  </style>
+</head>
+<body>
+  <audio id="bg-music" autoplay loop>
+    <source src="musica.mp3" type="audio/mp3">
+    Seu navegador não suporta áudio HTML5.
+  </audio>
+
+  <div class="container">
+    <h1>Noite de Pentecostes</h1>
+    <div class="subtitle">Uma noite de fogo e avivamento</div>
+    <p class="verse">"Ficaram todos cheios do Espírito Santo" <br><small>– Atos 2</small></p>
+
+    <div class="info">
+      🕊️ <strong>Pregador:</strong> <span class="highlight">@brenocolodedeus</span><br>
+      📅 <strong>Data:</strong> <span class="highlight">08 de Junho</span><br>
+      🕢 <strong>Horário:</strong> <span class="highlight">19h30</span><br>
+      📍 <strong>Local:</strong> Paróquia Divino Espírito Santo<br>
+      Av. Uruguaiana, 265, Qd.34 – Jardim Novo Mundo
+    </div>
+
+    <button class="btn" onclick="alert('Nos vemos lá! Prepare seu coração!')">Eu quero participar!</button>
+    <button class="btn" onclick="toggleMusic()">🔊 Ligar / Desligar Música</button>
+
+    <footer>
+      © 2025 Noite de Pentecostes • Todos os direitos reservados
+    </footer>
+  </div>
+
+  <script>
+    const music = document.getElementById("bg-music");
+    function toggleMusic() {
+      if (music.paused) {
+        music.play();
+      } else {
+        music.pause();
+      }
+    }
+  </script>
+</body>
+</html>
